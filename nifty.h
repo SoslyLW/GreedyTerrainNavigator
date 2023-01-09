@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-//#include <apmatrix.h>
 #include <cctype>
 #include <time.h>
 #include <math.h>
