@@ -1,4 +1,4 @@
-# GreedyTerrainNavigator
+# Greedy Terrain Navigator
 This program runs multiple terrain navigation algorithms on topological data from NOAA to find the path of least elevation change. Algorithms include multiple greedy searches and a stay-low elevation search. The programs evaluates the best option from each potential starting point on the left and highlights the most optimal route.
 
 Below are screenshots of the program running:
