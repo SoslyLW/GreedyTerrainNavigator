@@ -1,6 +1,4 @@
-/** Logan White - ICS4U - Nifty Mountains - Feb 24, 2020
-
-    This program will draw out an elevation map of the
+/** This program will draw out an elevation map of the
     mountains in Colorado and will the find paths with the
     lowest elevation change using a greedy walk, the path
     that stays low to the ground with the lowest elevation
@@ -20,7 +18,6 @@ int main() {
     }
 
     //variables
-    //apmatrix<short> mapData(mapRows, mapCols);
     short mapData[mapRows][mapCols];
 
     short maxElev, minElev;

@@ -2,7 +2,7 @@
 1582655997 source:c:\users\logan white\documents\code\greedyterrainnavigator\niftyallegro.cpp
 	"nifty.h"
 
-1673222394 c:\users\logan white\documents\code\greedyterrainnavigator\nifty.h
+1673222609 c:\users\logan white\documents\code\greedyterrainnavigator\nifty.h
 	<iostream>
 	<fstream>
 	<vector>
@@ -20,5 +20,11 @@
 	"nifty.h"
 
 1673222443 source:c:\users\logan white\documents\code\greedyterrainnavigator\niftyalgorithms.cpp
+	"nifty.h"
+
+1673222471 source:c:\users\logan white\documents\code\greedyterrainnavigator\niftyfilefunctions.cpp
+	"nifty.h"
+
+1673222471 source:c:\users\logan white\documents\code\greedyterrainnavigator\niftymap.cpp
 	"nifty.h"
 
