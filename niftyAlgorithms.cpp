@@ -14,31 +14,31 @@ void findBestPath(Path p[], int &best) {
 }
 
 //calculate the greedy walk paths
-void calcLowestElevPaths(const apmatrix<short> &m, Coordinate &c, Path p[]) {
-    for (int i = 0; i < m.numrows(); i++) {
+void calcLowestElevPaths(const short m[mapRows][mapCols], Coordinate &c, Path p[]) {
+    for (int i = 0; i < mapRows; i++) {
         c.x = 0;
         c.y = i;
 
-        while (c.x < m.numcols() - 1) {
+        while (c.x < mapCols - 1) {
             moveOne(m, c, p[i]);
         }
     }
 }
 
 //calculate the stay low paths
-void calcStayLowPaths(const apmatrix<short> &m, Coordinate &c, Path p[]) {
-    for (int i = 0; i < m.numrows(); i++) {
+void calcStayLowPaths(const short m[mapRows][mapCols], Coordinate &c, Path p[]) {
+    for (int i = 0; i < mapRows; i++) {
         c.x = 0;
         c.y = i;
 
-        while (c.x < m.numcols() - 1) {
+        while (c.x < mapCols - 1) {
             moveLow(m, c, p[i]);
         }
     }
 }
 
 //move one space for the stay low walk
-void moveLow(const apmatrix<short> &m, Coordinate &c, Path &p) {
+void moveLow(const short m[mapRows][mapCols], Coordinate &c, Path &p) {
     //if on top row
     if (c.y == 0) {
         //options
@@ -56,7 +56,7 @@ void moveLow(const apmatrix<short> &m, Coordinate &c, Path &p) {
             p.change += abs(differences[0]);
         }
     //if on bottom row
-    } else if (c.y == m.numrows() - 1) {
+    } else if (c.y == mapRows - 1) {
         //options
         int differences[2];
         differences[0] = m[c.y][c.x + 1] - m[c.y][c.x];
@@ -112,7 +112,7 @@ void moveLow(const apmatrix<short> &m, Coordinate &c, Path &p) {
 }
 
 //move one space for greedy walk
-void moveOne(const apmatrix<short> &m, Coordinate &c, Path &p) {
+void moveOne(const short m[mapRows][mapCols], Coordinate &c, Path &p) {
     //if on top row
     if (c.y == 0) {
         //options
@@ -130,7 +130,7 @@ void moveOne(const apmatrix<short> &m, Coordinate &c, Path &p) {
             p.change += differences[0];
         }
     //if on bottom row
-    } else if (c.y == m.numrows() - 1) {
+    } else if (c.y == mapRows - 1) {
         //options
         int differences[2];
         differences[0] = abs(m[c.y][c.x + 1] - m[c.y][c.x]);
@@ -185,13 +185,13 @@ void moveOne(const apmatrix<short> &m, Coordinate &c, Path &p) {
     c.x++;
 }
 
-void fivePointPath(apmatrix<short> &m, Coordinate &c, Path p[], ifstream &file) {
-    for (int i = 0; i < m.numrows(); i++) {
+void fivePointPath(short m[mapRows][mapCols], Coordinate &c, Path p[], ifstream &file) {
+    for (int i = 0; i < mapRows; i++) {
         c.x = 0;
         c.y = i;
 
         //move
-        while (c.x < m.numcols() - 1) {
+        while (c.x < mapCols - 1) {
             moveFive(m, c, p[i]);
         }
 
@@ -202,7 +202,7 @@ void fivePointPath(apmatrix<short> &m, Coordinate &c, Path p[], ifstream &file) 
     }
 }
 
-void moveFive(apmatrix<short> &m, Coordinate &c, Path &p) {
+void moveFive(short m[mapRows][mapCols], Coordinate &c, Path &p) {
     //if on top row
     if (c.y == 0) {
         //options
@@ -243,7 +243,7 @@ void moveFive(apmatrix<short> &m, Coordinate &c, Path &p) {
             p.lastmove = 2;
         }
     //if on bottom row
-    } else if (c.y == m.numrows() - 1) {
+    } else if (c.y == mapRows - 1) {
         //options
         int differences[3];
         differences[0] = abs(m[c.y - 1][c.x] - m[c.y][c.x]);

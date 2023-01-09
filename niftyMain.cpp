@@ -20,7 +20,9 @@ int main() {
     }
 
     //variables
-    apmatrix<short> mapData(mapRows, mapCols);
+    //apmatrix<short> mapData(mapRows, mapCols);
+    short mapData[mapRows][mapCols];
+
     short maxElev, minElev;
     Coordinate coor;
     char input;
@@ -42,7 +44,7 @@ int main() {
              << "[g] Greedy Walk" << endl
              << "[l] Stay Low Walk" << endl
              << "[f] Look Around Five Greedy" << endl
-             << "[e] Run. Everything." << endl
+             << "[e] Run everything" << endl
              << "[q] Quit" << endl
              << "Enter your selection: ";
         cin >> input;

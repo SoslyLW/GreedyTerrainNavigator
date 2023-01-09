@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1582655997 source:c:\users\logan white\documents\code\greedyterrainnavigator\niftyallegro.cpp
+	"nifty.h"
+
+1673222394 c:\users\logan white\documents\code\greedyterrainnavigator\nifty.h
+	<iostream>
+	<fstream>
+	<vector>
+	<cctype>
+	<time.h>
+	<math.h>
+	<cmath>
+	<stdlib.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_color.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_primitives.h>
+
+1673222342 source:c:\users\logan white\documents\code\greedyterrainnavigator\niftymain.cpp
+	"nifty.h"
+
+1673222443 source:c:\users\logan white\documents\code\greedyterrainnavigator\niftyalgorithms.cpp
+	"nifty.h"
+

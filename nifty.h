@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include <apmatrix.h>
+//#include <apmatrix.h>
 #include <cctype>
 #include <time.h>
 #include <math.h>
@@ -59,20 +59,20 @@ struct Path {
 #define LIGHTBLUE al_map_rgb(0, 255, 255)
 
 //prototypes
-void readIn(ifstream &file, apmatrix<short> &m);
-void findMax(short &maximum, const apmatrix<short> &m);
-void findMin(short &minimum, const apmatrix<short> &m);
+void readIn(ifstream &file, short m[mapRows][mapCols]);
+void findMax(short &maximum, const short m[mapRows][mapCols]);
+void findMin(short &minimum, const short m[mapRows][mapCols]);
 int checkSetup(ALLEGRO_DISPLAY *display);
 void initializeAllegro();
-void drawMap(const apmatrix<short> &m, int maximum, int minimum, ALLEGRO_DISPLAY *display);
+void drawMap(const short m[mapRows][mapCols], int maximum, int minimum, ALLEGRO_DISPLAY *display);
 bool headFlip();
-void calcLowestElevPaths(const apmatrix<short> &m, Coordinate &c, Path p[]);
-void moveOne(const apmatrix<short> &m, Coordinate &c, Path &p);
+void calcLowestElevPaths(const short m[mapRows][mapCols], Coordinate &c, Path p[]);
+void moveOne(const short m[mapRows][mapCols], Coordinate &c, Path &p);
 bool headFlip();
 void findBestPath(Path p[], int &best);
 void drawPaths(Path p[], ALLEGRO_DISPLAY *display, ALLEGRO_COLOR normal, ALLEGRO_COLOR ideal, int best);
-void calcStayLowPaths(const apmatrix<short> &m, Coordinate &c, Path p[]);
-void moveLow(const apmatrix<short> &m, Coordinate &c, Path &p);
-void fivePointPath(apmatrix<short> &m, Coordinate &c, Path p[], ifstream &file);
-void moveFive(apmatrix<short> &m, Coordinate &c, Path &p);
+void calcStayLowPaths(const short m[mapRows][mapCols], Coordinate &c, Path p[]);
+void moveLow(const short m[mapRows][mapCols], Coordinate &c, Path &p);
+void fivePointPath(short m[mapRows][mapCols], Coordinate &c, Path p[], ifstream &file);
+void moveFive(short m[mapRows][mapCols], Coordinate &c, Path &p);
 void drawFivePaths(Path p[], ALLEGRO_DISPLAY *display, ALLEGRO_COLOR normal, ALLEGRO_COLOR ideal, int best);

@@ -1,7 +1,7 @@
 #include "nifty.h"
 
 //Draws the elevation map on the screen
-void drawMap(const apmatrix<short> &m, int maximum, int minimum, ALLEGRO_DISPLAY *display) {
+void drawMap(const short m[mapRows][mapCols], int maximum, int minimum, ALLEGRO_DISPLAY *display) {
     //variables
     ALLEGRO_COLOR shade;
     float scaleShade[3];
@@ -11,8 +11,8 @@ void drawMap(const apmatrix<short> &m, int maximum, int minimum, ALLEGRO_DISPLAY
     float PRdiff[3] = {ROCK.r - HIGHPLATEAU.r, ROCK.g - HIGHPLATEAU.g, ROCK.b - HIGHPLATEAU.b};
 
     //color the map
-    for (int i = 0; i < m.numrows(); i++) {
-        for (int j = 0; j < m.numcols(); j++) {
+    for (int i = 0; i < mapRows; i++) {
+        for (int j = 0; j < mapCols; j++) {
             float intensity = (m[i][j] - minimum) / float (scaleDifference);
             if (intensity >= 0.82) {
                 intensity = (intensity - 0.82) / 0.18;
